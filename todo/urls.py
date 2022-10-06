@@ -26,6 +26,6 @@ urlpatterns = [
     path("test/", test, name="test"),
     path("test2/", second),
     path("dom", dom, name="dom"),
-    path("test3", test, name="test3")
+    path("test3/", test)
 ]   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

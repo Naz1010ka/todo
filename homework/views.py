@@ -1,8 +1,8 @@
 from django.shortcuts import render, HttpResponse
 
 def dom(request):
-    return HttpResponse("Это тест")
+    return render(request, "indexs.html")
 
 def test3(request):
-    return render(request, "test.html")
+    return render(request, "tests.html")
 
