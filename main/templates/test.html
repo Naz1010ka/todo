@@ -1,17 +1,53 @@
 {% load static %}
     <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'styless/color.css' %}">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Todo</title>
+        <!-- <link rel="stylesheet" href="./styless/index.css"> -->
+        <link rel="stylesheet" href="{% static 'styless/index.css' %}">
+        <!-- <link rel="stylesheet" href="./styless/checkbox.css"> -->
+        <link rel="stylesheet" href="{% static 'styless/checkbox.css' %}">
+    </head>
 <body>
-    <h2>надо заниматься с тренером</h2>
+    <!-- <h2>надо заниматься с тренером</h2>
     {%  for todo in todo_list %}
     <h3>   {{ todo.test }} - {{ todo.created_at }}</h3>  
-    {% endfor %}
+    {% endfor %} -->
+    <section>
+        <div class="create_container">
+            <input 
+            class="create_input"
+            type="text"
+            placeholder="Напишите сюда новую задачу"/>
+
+            <button class="create_button">Добавить</button>  
+        </div>
+           
+        <div class="todo_container">
+
+        {% for todo in todo_list %}
+            <div class="todo_item">
+                <div class="todo_item_header">
+                    <label for="checkbox_container">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <h4>{{ todo.test }}</h4>
+                </div>
+                <div class="todo_item_footer">
+                    <p>{{ todo.created_at }}</p>
+                    <div class="action_buttons">
+                        <img src="./icons/1077038.png">
+                        <img src="./icons/1485477104-basket_78591.png">
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    </section>
 </body>
 </html>
