@@ -9,4 +9,8 @@ def test3(request):
 
 
 def meet(request):
-    return render(request, "meeteng.html", {"todo_list": todo_list})
+    return render(request, "meeting.html")
+
+def meets(request):
+    tomeet_list = ToMeet.object.all()
+    return render(request, "meets1.html",{"tomeet_list": tomeet_list})
