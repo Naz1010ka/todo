@@ -28,7 +28,8 @@ urlpatterns = [
     path("dom", dom, name="dom"),
     path("test3/", test, name="test3"),
     path("meet/", meet, name="meet"),
-    path("meet1/", meet1, name="meet1")
+    path("meet1/", meet1, name="meet1"),
+    path("add-todo/", add_todo, name="add-todo"),
 ]   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from .models import TODO
 
 def homepage(request):
@@ -10,6 +10,14 @@ def test(request):
 
 def second(request):
     return HttpResponse("test 2 page")
+
+def add_todo(request):
+    form = request.POST
+    text = form["todo_text"]
+    todo = TODO(test=text)
+    todo.save()
+    return redirect(test)
+
     
 
 
