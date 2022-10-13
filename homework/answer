@@ -1,0 +1,11 @@
+31 урок: is_closed = models.BooleanField()
+        date_of_meeting = models.DateTimeField() - 
+models.FloatField()
+models.CharField()
+models.EmailField()
+models.TextField()
+32 урок : Django ORM — это инструмент фреймворка Django, 
+который позволяет взаимодействовать с базами данных,
+ используя высокоуровневые методы Python, а не SQL-запросы.
+  Он относится к типу ORM, который реализует шаблон Active Record. 
+  Общая суть шаблона в том, что каждой таблице в приложении соответствует одна модель.
