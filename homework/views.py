@@ -11,6 +11,6 @@ def test3(request):
 def meet(request):
     return render(request, "meeting.html")
 
-def meets(request):
-    tomeet_list = ToMeet.object.all()
-    return render(request, "meets1.html",{"tomeet_list": tomeet_list})
+def meet1(request):
+    tomeet_list = ToMeet.objects.all()
+    return render(request, "meet1.html", {"tomeet_list": tomeet_list})
