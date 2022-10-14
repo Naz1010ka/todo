@@ -13,12 +13,17 @@
 <body>
     <section>
         <div class="create_container">
+            <form action="{% url 'add-tome' %}" method="POST"> 
+            {% csrf_token %}
             <input 
             class="create_input"
             type="text"
-            placeholder="Новая встреча"/>
+            placeholder="Новая встреча"
+            name="todo_persone"
+            />
 
             <button class="create_button">запись</button>  
+            </form>
         </div>
         <div class="todo_container">
             {% for tomeet in tomeet_list %}
