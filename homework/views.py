@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
-from .models import ToMeet
+from .models import ToMeet, Habits
 
 def dom(request):
     return render(request, "indexs.html")
@@ -21,3 +21,7 @@ def add_tome(request):
     todo = ToMeet(persone=persone)
     todo.save()
     return redirect(meet1)
+
+
+def add_habits(request):
+    return HttpResponse("обработка")

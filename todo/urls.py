@@ -31,6 +31,8 @@ urlpatterns = [
     path("meet1/", meet1, name="meet1"),
     path("add-todo/", add_todo, name="add-todo"),
     path("add-tome/", add_tome, name="add-tome"),
+    path("delete-todo/<id>/", delete_todo,  name="delete-todo"),
+    path("add-habits/", add_habits, name="add-habits"),
 ]   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
