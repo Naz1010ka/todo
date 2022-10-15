@@ -23,7 +23,15 @@ def delete_todo(request, id):
     todo.delete()
     return redirect(test)
 
-    
+def mark_todo(request, id):
+    todo = TODO.objects.get(id=id)
+    todo.is_favorite = True
+    todo.save()
+    return redirect(test)
 
-
+def unmark_todo(request, id):
+    todo = TODO.objects.get(id=id)
+    todo.is_closed = True
+    todo.save()
+    return redirect(test)
 
