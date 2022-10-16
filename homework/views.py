@@ -23,5 +23,9 @@ def add_tome(request):
     return redirect(meet1)
 
 
-def add_habits(request):
-    return HttpResponse("обработка")
+
+
+def del_tome(request,id):
+    todo = ToMeet.objects.get(id=id)
+    todo.delete()
+    return redirect(meet1)

@@ -31,10 +31,10 @@ urlpatterns = [
     path("meet1/", meet1, name="meet1"),
     path("add-todo/", add_todo, name="add-todo"),
     path("add-tome/", add_tome, name="add-tome"),
-    path("delete-todo/<id>/", delete_todo,  name="delete-todo"),
-    path("mark-todo/<id>/", mark_todo,  name="mark-todo"),
-    path("unmark-todo/<id>/", unmark_todo,  name="unmark-todo"),
-    path("add-habits/", add_habits, name="add-habits"),
+    path("delete-todo/<id>/", delete_todo, name="delete-todo"),
+    path("mark-todo/<id>/", mark_todo, name="mark-todo"),
+    path("unmark-todo/<id>/", unmark_todo, name="unmark-todo"),
+    path("del-tome/<id>/", del_tome, name="del-tome"),
 ]   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
