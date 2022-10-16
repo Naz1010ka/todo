@@ -27,7 +27,14 @@
         </div>
         <div class="todo_container">
             {% for tomeet in tomeet_list %}
-              <div class="todo_item">
+              <div class="todo_item 
+              {% if todo.is_favorite %}
+            market
+            {% endif %}
+            {% if todo.is_closed %}
+            mark
+            {% endif %}">
+              ">
                 <div class="todo_item_header">
                     <label for="checkbox_container">
                         <input type="checkbox">
@@ -38,8 +45,13 @@
                 <div class="todo_item_footer">
                     <p>{{ tomeet.date_of_meeting }}</p>
                     <div class="action_buttons">
-                        <img src="{% static './icons/1_2789.png' %}">
-                        <a href="{% url 'del-tome' todo.id %}"><img src="{% static './icons/1485477104-basket_78591.png' %}"></a>
+                        {% if todo.is_favorite %}
+                        <a href="{% url 'unmark-todo' todo.id %}"><img src="{% static './icons/1_2789.png' %}"></a>
+                        {% else %}
+                        <a href="{% url 'mark-todo' todo.id %}"><img src="{% static './icons/1077038.png' %}"></a>
+                        {% endif %}
+
+                        <a href="{% url 'delt-todo' todo.id %}"><img src="{% static 'icons/1485477104-basket_78591.png' %}"/></a>
                     </div>
                 </div>
             </div>

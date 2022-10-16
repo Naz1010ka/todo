@@ -25,7 +25,19 @@ def add_tome(request):
 
 
 
-def del_tome(request,id):
+def delete_to_meet(request,id):
     todo = ToMeet.objects.get(id=id)
     todo.delete()
     return redirect(meet1)
+
+def mark_to_meet(request,id):
+    todo = ToMeet.objects.get(id = id)
+    todo.is_favorite = True
+    todo.save()
+    return redirect(meet1)
+
+def closed_todo(request,id):
+     todo = ToMeet.objects.get(id=id)
+     todo.is_closed = True
+     todo.save()
+     return redirect (meet1)
