@@ -37,6 +37,7 @@ urlpatterns = [
     path("delt-todo/<id>/",delete_to_meet,name="delt-todo"),
     path("mark-todos/<id>/", mark_to_meet,name="mark-todos"),
     path("clos-todo/<id>/",closed_todo, name="clos-todo"),
+    path("close-todo/<id>", close_todo, name="close-todo"),
 ]   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
