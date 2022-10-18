@@ -13,25 +13,29 @@
 <body>
     <section>
         <div class="create_container">
-            
+         <form action="{% url 'add-habits' %}" method="POST">  
+            {% csrf_token %}
             <input 
             class="create_input"
             type="text"
-            placeholder="Привычки"/>
-
-            <button class="create_button">Задачи</button>  
+            placeholder="Привычки"
+            name="habits_name"
+            />
+          
+            <button class="create_button">Задачи</button> 
+        </form> 
         </div>
            
         <div class="todo_container">
             {% for habits in habits_list %}
             <div class="todo_item">
-                <div class="todo_item_header">
+            <div class="todo_item_header">
                     <label for="checkbox_container">
                         <input type="checkbox">
                         <span class="checkmark"></span>
                     </label>
                     <h4>{{ habits.name }}</h4>
-                </div>
+            </div>
                 <div class="todo_item_footer">
                     <p>25.09.2022 <span>15:27</span></p>
                     <div class="action_buttons">
@@ -41,7 +45,7 @@
                 </div>
             </div>
         
-            </div>
+        </div>
             {% endfor %}
             
     </section>

@@ -47,3 +47,9 @@ def habits(request):
     habits_list = Habits.objects.all()
     return render(request, "habits.html", {"habits_list": habits_list})
 
+def add_habits(request):
+    form = request.POST
+    text = form["habits_name"]
+    todo = Habits(name=text)
+    todo.save()
+    return redirect(habits)
