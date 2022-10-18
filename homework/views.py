@@ -41,3 +41,9 @@ def closed_todo(request,id):
      todo.is_closed = True
      todo.save()
      return redirect (meet1)
+
+
+def habits(request):
+    habits_list = Habits.objects.all()
+    return render(request, "habits.html", {"habits_list": habits_list})
+

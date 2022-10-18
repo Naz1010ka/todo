@@ -23,8 +23,8 @@ section{
 }
 .create_button{
     padding: 12px 20px;
-    background-color: orange;
-    border: 1px solid orange;
+    background-color: royalblue;
+    border: 1px solid royalblue;
     color: white;
     font-size: 18px;
     text-transform: uppercase;
@@ -33,8 +33,8 @@ section{
     cursor: pointer;
 }
 .create_button:active{
-    border: 1px solid gray;
-    box-shadow: 2px 2px 5px 3px gray;
+    border: 1px solid brown;
+    box-shadow: 2px 2px 5px 3px brown;
 }
 .todo_container{
     padding: 30px 20px;
@@ -44,26 +44,26 @@ section{
     width: 100%;
 }
 .todo_item{
-    border: 1px solid oldlace;
+    border: 1px solid gray;
     border-radius: 5px;
     width: 24%;
     padding: 10px 15px;
-    background-color: olive;
-    margin-bottom: 20px;
+    background-color: brown;
+    margin-bottom: 15px;
 }
 .todo_item.done{
-    background-color: tan;
+    background-color: crimson;
     text-decoration: line-through;
-    color: thistle;
+    color: crimson;
 
 }
 .todo_item.done h4, .todo_item.done p, .todo_item.done span{
-    color: thistle;
+    color: black;
 }
 
 .todo_item.marked{
-    background-color: olive;
-    border: 2px solid olive;
+    background-color: peru;
+    border: 2px solid peru;
 }
 
 .todo_item_header{

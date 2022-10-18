@@ -12,10 +12,7 @@
         <link rel="stylesheet" href="{% static 'styless/checkbox.css' %}">
     </head>
 <body>
-    <!-- <h2>надо заниматься с тренером</h2>
-    {%  for todo in todo_list %}
-    <h3>   {{ todo.test }} - {{ todo.created_at }}</h3>  
-    {% endfor %} -->
+   
     <section>
         <div class="create_container">
             <form action="{% url 'add-todo' %}" method="POST">
@@ -26,7 +23,7 @@
             placeholder="Напишите сюда новую задачу"
             name="todo_text"
             />
-            
+        
 
             <button class="create_button">Добавить</button>
             </form>  
@@ -38,7 +35,8 @@
             <div class="todo_item 
             {% if todo.is_favorite %}
               marked
-             
+            
+
             {% elif todo.is_closed %}
                 done
 
