@@ -53,3 +53,15 @@ def add_habits(request):
     todo = Habits(name=text)
     todo.save()
     return redirect(habits)
+
+def del_habits(request, id):
+    todo = Habits.objects.get(id=id)
+    todo.delete()
+    return redirect(habits)
+
+def mark_habits(request, id):
+    todo = Habits.objects.get(id=id)
+    habits.important = True
+    todo.save()
+    return redirect(habits)
+

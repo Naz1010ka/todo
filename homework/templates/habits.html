@@ -28,7 +28,11 @@
            
         <div class="todo_container">
             {% for habits in habits_list %}
-            <div class="todo_item">
+            <div class="todo_item
+                 {% if habits.important %}
+                 marked
+                 {% endif %}
+            ">
             <div class="todo_item_header">
                     <label for="checkbox_container">
                         <input type="checkbox">
@@ -39,8 +43,15 @@
                 <div class="todo_item_footer">
                     <p>25.09.2022 <span>15:27</span></p>
                     <div class="action_buttons">
-                        <img src="{% static './icons/звезда.png' %}">
-                        <img src="{% static './icons/корзинка.png' %}">
+
+                        {% if habits.important %}
+                           <a href="{% url 'mark-habits' habits.id %}"><img src="{% static './icons/1_2789.png' %}"></a>
+                        {% else %}
+                           <a href="{% url 'mark-habits' habits.id %}"><img src="{% static './icons/звезда.png' %}"></a>
+                        {% endif %}
+
+                        <a href="{% url 'del-habits' habits.id %}"><img src="{% static './icons/корзинка.png' %}"></a>
+                        
                     </div>
                 </div>
             </div>
